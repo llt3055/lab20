@@ -30,7 +30,7 @@ public:
         for (int i = 0; i < SIZE; i++)
             prices[i] = p[i];
         }
-    }
+    
 
     // setters and getters
     void setLegs(int l)      { legs = l; }
@@ -68,7 +68,8 @@ int main() {
     chairPtr->print();
 
     //creating dynamic chair object with constructor
-    Chair *livingChair = new Chair(3);
+    double p[] = {525.25, 434.34, 252.52};
+    Chair *livingChair = new Chair(3, p);
     livingChair->setPrices(525.25, 434.34, 252.52);
     livingChair->print();
     delete livingChair;
