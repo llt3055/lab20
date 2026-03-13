@@ -16,7 +16,7 @@ public:
     Chair() {
         prices = new double[SIZE];
         // Randomly select 3 or 4 legs
-        legs = (rand() % 2);
+        legs = (rand() % 2) + 3;
         // Randomly select prices from $100.00 to $999.99
         const int MIN = 10000, MAX = 99999;
         for (int i = 0; i < SIZE; i++){
@@ -30,7 +30,10 @@ public:
         for (int i = 0; i < SIZE; i++)
             prices[i] = p[i];
         }
-    
+        
+    ~Chair() {
+        delete[] prices;
+    }
 
     // setters and getters
     void setLegs(int l)      { legs = l; }
