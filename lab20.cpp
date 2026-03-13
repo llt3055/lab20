@@ -15,17 +15,23 @@ public:
     // constructors
     Chair() {
         prices = new double[SIZE];
+        // Randomly select 3 or 4 legs
         legs = (rand() % 2);
-        for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
+        // Randomly select prices from $100.00 to $999.99
+        const int MIN = 10000, MAX = 99999;
+        for (int i = 0; i < SIZE; i++){
+            prices[i] = (rand() % (MAX - MIN + 1) + MIN) / (double)100;
+        }
     }
+            
     Chair(int l) {
         prices = new double[SIZE];
         legs = l;
         for (int i = 0; i < SIZE; i++)
-            prices[i] = 0;
+            prices[i] = p[i];
+        }
     }
-
+    
     // setters and getters
     void setLegs(int l)      { legs = l; }
     int getLegs()            { return legs; }
