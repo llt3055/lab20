@@ -24,14 +24,14 @@ public:
         }
     }
             
-    Chair(int l) {
+    Chair(int l, double p[]) {
         prices = new double[SIZE];
         legs = l;
         for (int i = 0; i < SIZE; i++)
             prices[i] = p[i];
         }
     }
-    
+
     // setters and getters
     void setLegs(int l)      { legs = l; }
     int getLegs()            { return legs; }
@@ -51,13 +51,14 @@ public:
         cout << "CHAIR DATA - legs: " << legs << endl;
         cout << "Price history: " ;
         for (int i = 0; i < SIZE; i++)
-            cout << prices[i] << " ";
+        cout << prices[i] << " ";
         cout << endl << "Historical avg price: " << getAveragePrices();
         cout << endl << endl;
     }
 };
 
 int main() {
+    srand(time(0)); // Seed the random number generator
     cout << fixed << setprecision(2);
 
     //creating pointer to first chair object
